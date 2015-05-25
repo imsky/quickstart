@@ -1,6 +1,6 @@
 /*
-Basic Gulpfile from Quickstart
-qkst.io/gulp/basic.js
+Base Gulpfile from Quickstart
+qkst.io/gulp/base
 */
 var gulp = require('gulp');
 var concat = require('gulp-concat');

@@ -1,6 +1,10 @@
+# Base gitignore from Quickstart
+# qkst.io/gitignore/base
+
 # JavaScript
 node_modules/
 bower_components/
+npm-debug.log
 
 # Python
 *.py[cod]
@@ -12,6 +16,8 @@ bower_components/
 # C, C++
 *.o
 *.so
+*.la
+*.a
 *.dll
 
 # Executables
