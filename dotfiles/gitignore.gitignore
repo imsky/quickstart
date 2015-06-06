@@ -1,5 +1,5 @@
 # Base gitignore from Quickstart
-# qkst.io/gitignore/base
+# qkst.io/dotfiles/gitignore
 
 # JavaScript
 node_modules/
