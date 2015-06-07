@@ -51,4 +51,8 @@ gulp.task('minify', ['bundle'], function () {
     .pipe(gulp.dest(paths.dist));
 });
 
+gulp.task('watch', function () {
+  gulp.watch(files.src, ['bundle']);
+});
+
 gulp.task('default', ['minify']);
