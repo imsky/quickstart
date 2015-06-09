@@ -1,5 +1,5 @@
 /*
-Base Gulpfile from Quickstart
+Gulpfile from Quickstart
 qkst.io/js/gulpfile
 */
 
