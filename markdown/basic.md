@@ -1,6 +1,6 @@
 <!--
-Base Markdown from Quickstart
-qkst.io/markdown/base
+Basic Markdown from Quickstart
+qkst.io/markdown/basic
 -->
 
 # Hello World
