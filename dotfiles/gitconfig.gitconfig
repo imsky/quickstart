@@ -1,0 +1,20 @@
+# Git config from Quickstart
+# qkst.io/dotfiles/gitconfig
+
+[alias]
+    who = shortlog -sn
+    lg = log --abbrev-commit --pretty=oneline --decorate --all --topo-order
+    po = push origin
+
+[color]
+    ui = true
+
+[core]
+    trustctime = false
+    precomposeunicode = false
+
+[push]
+    default = upstream
+
+[help]
+    autocorrect = 1
