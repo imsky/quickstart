@@ -7,7 +7,7 @@ qkst.io/readme/contributing
 
 ## Questions and support
 
-* Join us on IRC in #channel
+* Join us on IRC in #example on Freenode
 * Post to our mailing list at list@example.com
 * Ask a question on Twitter/Stack Overflow using the #example tag
 
