@@ -13,8 +13,8 @@ qkst.io/readme/readme
 
 A short description of the project pointing out its main motivation and advantages.
 
-[![Join our Slack room][slack-image]][slack-url]
 [![Join our IRC room][irc-image]][irc-url]
+[![Join our Slack room][slack-image]][slack-url]
 [![Join our Gitter room][gitter-image]][gitter-url]
 <br>
 [![Share on Twitter][twitter-image]][twitter-link]
