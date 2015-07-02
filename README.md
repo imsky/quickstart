@@ -6,6 +6,19 @@ Quickstart is a repository of starting points for documents, scripts, and config
 
 When starting on a new project, there are many files to initialize, and many of them are initialized in very similar ways every time. Quickstart's starting points are simple tools to help authors create projects from scratch faster.
 
+## Usage
+
+```
+curl https://qkst.io/dotfiles/gitconfig
+```
+
+To save the file with the correct filename (e.g. `.gitconfig` for `gitconfig`):
+
+```
+curl -OJ https://qkst.io/dotfiles/gitconfig
+wget --content-disposition https://qkst.io/dotfiles/gitconfig
+```
+
 ## Credits
 
 Quickstart is a project by [Ivan Malopinsky](http://imsky.co).
