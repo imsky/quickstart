@@ -15,8 +15,8 @@ curl https://qkst.io/dotfiles/gitconfig
 To save the file with the correct filename (e.g. `.gitconfig` for `gitconfig`):
 
 ```
-curl -OJ https://qkst.io/dotfiles/gitconfig
-wget --content-disposition https://qkst.io/dotfiles/gitconfig
+curl -OJ https://qkst.io/dotfiles/gitconfig?dl
+wget --content-disposition https://qkst.io/dotfiles/gitconfig?dl
 ```
 
 ## Credits

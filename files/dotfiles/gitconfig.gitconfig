@@ -12,6 +12,8 @@
 [core]
     trustctime = false
     precomposeunicode = false
+    autocrlf = true
+  # editor = nano
 
 [push]
     default = upstream
