@@ -30,8 +30,9 @@ def list_files(type):
     files = []
     for root, dirs, _files in os.walk(dir):
       for f in _files:
-        split = string.split(f, '.')
-        files.append(split[0].lower())
+        if f[0] != '.':
+          split = string.split(f, '.')
+          files.append(split[0].lower())
     return files
   return False
 
