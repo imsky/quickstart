@@ -5,6 +5,8 @@ import os, string, pprint
 def find_file(type, name):
   """searches file within directory by name, ignoring extension and case"""
   assert type.isalpha() and name.isalpha()
+  type = type.lower()
+  name = name.lower()
   dir = 'files/' + type
   options = []
   if os.path.isdir(dir):
@@ -22,6 +24,7 @@ def find_file(type, name):
 def list_files(type):
   """ lists file within directory, ignoring extension and case"""
   assert type.isalpha()
+  type = type.lower()
   dir = 'files/' + type
   if os.path.isdir(dir):
     files = []
@@ -36,7 +39,7 @@ def list_files(type):
 def serve_static(filepath):
   return static_file(filepath, root='./static')
 
-@route('/<type:re:[a-z]+>')
+@route('/<type:re:[a-zA-Z]+>')
 @jinja2_view('listing')
 def get_type(type):
   files = list_files(type)
@@ -46,7 +49,7 @@ def get_type(type):
   else:
     abort(404, 'Category not found')
 
-@route('/<type:re:[a-z]+>/<name:re:[a-z]+>')
+@route('/<type:re:[a-zA-Z]+>/<name:re:[a-zA-Z]+>')
 def get_file(type, name):
   lookup = find_file(type, name)
 
