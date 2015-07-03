@@ -1,11 +1,12 @@
-from bottle import route, request, run, template, error, abort, static_file
+from bottle import route, request, run, error, abort, static_file
+from bottle import template, jinja2_view
 import os, string, pprint
 
 def find_file(type, name):
   """searches file within directory by name, ignoring extension and case"""
+  assert type.isalpha() and name.isalpha()
   dir = 'files/' + type
   options = []
-  # todo: sanitize type and name
   if os.path.isdir(dir):
     for root, dirs, files in os.walk(dir):
       for f in files:
@@ -18,14 +19,41 @@ def find_file(type, name):
             return [options, dir, f]
   return False
 
-@route('/<type>/<name>')
-def render(type, name):
+def list_files(type):
+  """ lists file within directory, ignoring extension and case"""
+  assert type.isalpha()
+  dir = 'files/' + type
+  if os.path.isdir(dir):
+    files = []
+    for root, dirs, _files in os.walk(dir):
+      for f in _files:
+        split = string.split(f, '.')
+        files.append(split[0].lower())
+    return files
+  return False
+
+@route('/static/<filepath:path>')
+def serve_static(filepath):
+  return static_file(filepath, root='./static')
+
+@route('/<type:re:[a-z]+>')
+@jinja2_view('listing')
+def get_type(type):
+  files = list_files(type)
+
+  if files:
+    return dict(type=type, files=files)
+  else:
+    abort(404, 'Category not found')
+
+@route('/<type:re:[a-z]+>/<name:re:[a-z]+>')
+def get_file(type, name):
   lookup = find_file(type, name)
 
   if lookup:
     options, dir, filename = lookup
     download = False
-    # todo: make dl flag more concise
+    # todo: make dl flag logic more concise
     if request.query_string == 'download' or request.query_string == 'dl':
       split = string.split(filename, '.')
       download = True
@@ -41,4 +69,8 @@ def render(type, name):
   else:
     abort(404, 'File not found')
 
-run(host='localhost', port=8080)
+print os.getcwd()
+print os.path.dirname(os.path.realpath(__file__))
+
+def start():
+  run()
