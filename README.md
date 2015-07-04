@@ -1,24 +1,24 @@
 # Quickstart
 
-Quickstart is a repository of starting points for documents, scripts, and configuration.
+![License][license-image]
 
-## Why?
-
-When starting on a new project, there are many files to initialize, and many of them are initialized in very similar ways every time. Quickstart's starting points are simple tools to help authors create projects from scratch faster.
+Quickstart is a collection of useful files.
 
 ## Usage
 
-```
-curl https://qkst.io/dotfiles/gitconfig
-```
-
-To save the file with the correct filename (e.g. `.gitconfig` for `gitconfig`):
-
-```
-curl -OJ https://qkst.io/dotfiles/gitconfig?dl
-wget --content-disposition https://qkst.io/dotfiles/gitconfig?dl
-```
+* Browse online: [qkst.io](https://qkst.io)
+* Download online: [qkst.io/readme/readme?dl](https://qkst.io/readme/readme?dl)
+* Browse with `curl`: `curl qkst.io/readme/readme`
+* Download with `curl`: `curl -OJ qkst.io/readme/readme?dl`
 
 ## Credits
 
 Quickstart is a project by [Ivan Malopinsky](http://imsky.co).
+
+## License
+
+Quickstart is provided under the MIT license.
+
+<!-- References -->
+
+[license-image]: https://img.shields.io/badge/license-MIT-blue.svg
