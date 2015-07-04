@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body -%}
+<h1>quickstart</h1>
+
+<div class="home">
+  <p>Quickstart is a collection of useful files.</p>
+
+  <p>You can browse the site using the list below. <br> When you want to download a file, add <code>?dl</code> to the URL.</p>
+
+  <p>You can also use the command line:<br>
+  <code>curl qkst.io/readme/readme</code><br>
+  <code>curl -OJ qkst.io/license/mit?dl</code>
+  </p>
+</div>
+
+<ul class="types">
+{% for type in types %}
+  <li><a href="/{{ type }}">{{ type }}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock -%}

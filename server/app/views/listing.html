@@ -1,14 +1,12 @@
-{% extends "layout.tpl" %}
+{% extends "layout.html" %}
 {% block body -%}
 <h1>
 <a href="/">quickstart</a>
 {% if type %}<span class="type">{{ type }}</span>{% endif %}
 </h1>
-{% if files %}
 <ul class="files">
 {% for file in files %}
-  <li><a href="/{{type }}/{{ file }}">{{ file }}</a></li>
+  <li><a href="/{{ type }}/{{ file }}">{{ file }}</a></li>
 {% endfor %}
 </ul>
-{% endif %}
 {% endblock -%}

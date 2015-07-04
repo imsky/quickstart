@@ -3,7 +3,7 @@ from bottle import template, jinja2_view
 import os, string, pprint
 
 def find_file(type, name):
-  """searches file within directory by name, ignoring extension and case"""
+  """ searches file within directory by name, ignoring extension and case """
   assert type.isalpha() and name.isalpha()
   type = type.lower()
   name = name.lower()
@@ -22,7 +22,7 @@ def find_file(type, name):
   return False
 
 def list_files(type):
-  """ lists file within directory, ignoring extension and case"""
+  """ lists file within directory, ignoring extension and case """
   assert type.isalpha()
   type = type.lower()
   dir = 'files/' + type
@@ -33,12 +33,33 @@ def list_files(type):
         if f[0] != '.':
           split = string.split(f, '.')
           files.append(split[0].lower())
+    files.sort()
     return files
   return False
+
+def list_types():
+  """ lists types (directories), ignoring case and symlinks """
+  types = []
+  for root, dirs, files in os.walk('files'):
+    for d in dirs:
+      if os.path.islink('files/' + d) is False:
+        types.append(d)
+  types.sort()
+  return types
+
+@error(404)
+@jinja2_view('404')
+def error404(error):
+  return dict()
 
 @route('/static/<filepath:path>')
 def serve_static(filepath):
   return static_file(filepath, root='./static')
+
+@route('/')
+@jinja2_view('home')
+def get_home():
+  return dict(types=list_types())
 
 @route('/<type:re:[a-zA-Z]+>')
 @jinja2_view('listing')
@@ -72,9 +93,6 @@ def get_file(type, name):
     return static_file(filename, dir, mimetype='text/plain', download=download)
   else:
     abort(404, 'File not found')
-
-print os.getcwd()
-print os.path.dirname(os.path.realpath(__file__))
 
 def start():
   run()
