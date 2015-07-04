@@ -61,7 +61,7 @@ def serve_static(filepath):
 def get_home():
   return dict(types=list_types())
 
-@route('/<type:re:[a-zA-Z/]+>')
+@route('/<type:re:[a-zA-Z]+/?>')
 @jinja2_view('listing')
 def get_type(type):
   type = type.replace('/', '')
