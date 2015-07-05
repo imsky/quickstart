@@ -13,4 +13,4 @@ after_success:
 - chmod 400 server/quickstart.pem
 - echo -e "Host qkst.io\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - scp -i server/quickstart.pem /tmp/$BUILD_FILE deployer@qkst.io:/tmp
-- ssh -i server/quickstart.pem deployer@qkst.io bash -c "~/deploy-qkst.sh /tmp/$BUILD_FILE >> ~/deploy-qkst.log"
+- ssh -i server/quickstart.pem deployer@qkst.io "~/deploy-qkst.sh /tmp/$BUILD_FILE >> ~/deploy-qkst.log"

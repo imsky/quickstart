@@ -1,8 +1,9 @@
 # Quickstart
 
-![License][license-image]
-
 Quickstart is a collection of useful files.
+
+![License][license-image]
+[![Build status][travis-image]][travis-url]
 
 ## Usage
 
@@ -22,3 +23,5 @@ Quickstart is provided under the MIT license.
 <!-- References -->
 
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
+[travis-url]: https://travis-ci.org/imsky/quickstart
+[travis-image]: https://img.shields.io/travis/imsky/quickstart/master.svg
