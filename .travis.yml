@@ -1,12 +1,16 @@
 language: python
 python:
-  - 2.7
-sudo: required
-before_install:
-  - sudo apt-get install -y tree
+- 2.7
 script:
-  - virtualenv server/env
-  - source server/env/bin/activate
-  - pip install -r server/env/requirements.txt
+- virtualenv server/env
+- source server/env/bin/activate
+- pip install -r server/env/requirements.txt
 after_success:
-  - tree
+- BUILD_FILE=qkst-build-$TRAVIS_BUILD_NUMBER.tar.gz
+- tar czvf /tmp/$BUILD_FILE . --exclude='.git'
+- openssl aes-256-cbc -K $encrypted_2052dc76d87a_key -iv $encrypted_2052dc76d87a_iv
+  -in server/quickstart.pem.enc -out server/quickstart.pem -d
+- chmod 400 server/quickstart.pem
+- echo -e "Host qkst.io\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+- scp -i server/quickstart.pem /tmp/$BUILD_FILE deployer@qkst.io:/tmp
+- ssh -i server/quickstart.pem deployer@qkst.io bash -c "~/deploy-qkst.sh /tmp/$BUILD_FILE >> ~/deploy-qkst.log"
