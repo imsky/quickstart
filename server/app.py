@@ -50,7 +50,7 @@ def list_types():
   return types
 
 @error(404)
-@jinja2_view('404')
+@jinja2_view('404.html')
 def error404(error):
   return dict()
 
@@ -59,7 +59,7 @@ def serve_static(filepath):
   return static_file(filepath, root='./static')
 
 @route('/')
-@jinja2_view('home')
+@jinja2_view('home.html')
 def get_home():
   if 'types' in cache:
     types = cache['types']
@@ -69,7 +69,7 @@ def get_home():
   return dict(types=types)
 
 @route('/<type:re:[a-zA-Z]+/?>')
-@jinja2_view('listing')
+@jinja2_view('listing.html')
 def get_type(type):
   type = type.replace('/', '')
 
