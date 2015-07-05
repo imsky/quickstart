@@ -7,12 +7,12 @@ qkst.io/readme/readme
 
 <!-- Project image -->
 
+A short description of the project pointing out its main motivation and advantages.
+
 ![License][license-image]
 [![Build status][travis-image]][travis-url]
 [![NPM downloads][npm-image]][npm-url]
-
-A short description of the project pointing out its main motivation and advantages.
-
+<br>
 [![Join our IRC room][irc-image]][irc-url]
 [![Join our Slack room][slack-image]][slack-url]
 [![Join our Gitter room][gitter-image]][gitter-url]
