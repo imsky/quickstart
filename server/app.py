@@ -1,8 +1,9 @@
-from bottle import route, request, run, error, abort, static_file, default_app
+from bottle import route, request, error, abort, static_file
 from bottle import template, jinja2_view
 from waitress import serve
+import bottle, os, string, pprint
 
-import os, string, pprint
+cache = dict()
 
 def find_file(type, name):
   """ searches file within directory by name, ignoring extension and case """
@@ -61,13 +62,23 @@ def serve_static(filepath):
 @route('/')
 @jinja2_view('home')
 def get_home():
-  return dict(types=list_types())
+  if 'types' in cache:
+    types = cache['types']
+  else:
+    types = list_types()
+    cache['types'] = types
+  return dict(types=types)
 
 @route('/<type:re:[a-zA-Z]+/?>')
 @jinja2_view('listing')
 def get_type(type):
   type = type.replace('/', '')
-  files = list_files(type)
+
+  if 'files.' + type in cache:
+    files = cache['files.' + type]
+  else:
+    files = list_files(type)
+    cache['files.' + type] = files
 
   if files:
     return dict(type=type, files=files)
@@ -97,4 +108,4 @@ def get_file(type, name):
   else:
     abort(404, 'File not found')
 
-serve(default_app())
+serve(bottle.default_app())
