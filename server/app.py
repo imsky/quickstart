@@ -1,5 +1,7 @@
-from bottle import route, request, run, error, abort, static_file
+from bottle import route, request, run, error, abort, static_file, default_app
 from bottle import template, jinja2_view
+from waitress import serve
+
 import os, string, pprint
 
 def find_file(type, name):
@@ -95,5 +97,4 @@ def get_file(type, name):
   else:
     abort(404, 'File not found')
 
-def start():
-  run()
+serve(default_app())
