@@ -1,9 +1,9 @@
 language: python
 python:
 - 2.7
+before_install:
+- pip install --upgrade pip
 script:
-- virtualenv server/env
-- source server/env/bin/activate
 - pip install -r server/env/requirements.txt
 after_success:
 - BUILD_FILE=qkst-build-$TRAVIS_BUILD_NUMBER.tar.gz
