@@ -1,0 +1,12 @@
+language: python
+python:
+  - 2.7
+sudo: required
+before_install:
+  - sudo apt-get install -y tree
+script:
+  - virtualenv server/env
+  - source server/env/bin/activate
+  - pip install -r server/env/requirements.txt
+after_success:
+  - tree
