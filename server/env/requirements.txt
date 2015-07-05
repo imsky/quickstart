@@ -1,0 +1,6 @@
+Jinja2==2.7.3
+MarkupSafe==0.23
+argparse==1.2.1
+bottle==0.12.8
+waitress==0.8.9
+wsgiref==0.1.2
