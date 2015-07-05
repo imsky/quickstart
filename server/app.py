@@ -1,7 +1,6 @@
 from bottle import route, request, error, abort, static_file
 from bottle import template, jinja2_view
-from waitress import serve
-import bottle, os, string, pprint
+import bottle, waitress, os, string, pprint
 
 cache = dict()
 
@@ -108,4 +107,4 @@ def get_file(type, name):
   else:
     abort(404, 'File not found')
 
-serve(bottle.default_app())
+waitress.serve(bottle.default_app(), unix_socket='/tmp/quickstart.sock')
