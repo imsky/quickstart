@@ -19,7 +19,7 @@ def find_file(type, name):
         else:
           split = string.split(f, '.')
           filename = split[0]
-          if filename.lower() == name.lower():
+          if filename.lower() == name:
             return [options, dir, f]
   return False
 
