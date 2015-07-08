@@ -12,8 +12,9 @@ def find_file(type, name):
   dir = 'files/' + type
 
   if os.path.isdir(dir):
+    iname = ''.join(['[' + c.lower() + c.upper() + ']' for c in name])
     options = [os.path.basename(f)[1:] for f in glob.glob(dir + '/.*')]
-    files = [os.path.basename(f) for f in glob.glob(dir + '/' + name + '.*')]
+    files = [os.path.basename(f) for f in glob.glob(dir + '/' + iname + '.*')]
     if len(files) >= 1:
       return [options, dir, files[0]]
   return False
