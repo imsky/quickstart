@@ -1,3 +1,8 @@
+/*
+Gulpfile (Babel + Webpack) from Quickstart
+qkst.io/js/gulpfile-babel-webpack
+*/
+
 // npm install --save-dev gulp gulp-webpack babel-loader
 
 var gulp = require('gulp');
