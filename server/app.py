@@ -1,26 +1,21 @@
 from bottle import route, request, error, abort, static_file
 from bottle import template, jinja2_view
-import bottle, waitress, os, string, pprint
+import bottle, waitress, os, glob, string, pprint
 
 cache = dict()
 
 def find_file(type, name):
   """ searches file within directory by name, ignoring extension and case """
-  assert type.isalpha() and name.isalpha()
+  assert type.isalpha() and name.replace('-', '').isalpha()
   type = type.lower()
   name = name.lower()
   dir = 'files/' + type
-  options = []
+
   if os.path.isdir(dir):
-    for root, dirs, files in os.walk(dir):
-      for f in files:
-        if f[0] == '.':
-          options.append(f[1:])
-        else:
-          split = string.split(f, '.')
-          filename = split[0]
-          if filename.lower() == name:
-            return [options, dir, f]
+    options = [os.path.basename(f) for f in glob.glob(dir + '/.*')]
+    files = [os.path.basename(f) for f in glob.glob(dir + '/' + name + '.*')]
+    if len(files) >= 1:
+      return [options, dir, files[0]]
   return False
 
 def list_files(type):
@@ -84,7 +79,7 @@ def get_type(type):
   else:
     abort(404, 'Category not found')
 
-@route('/<type:re:[a-zA-Z]+>/<name:re:[a-zA-Z]+>')
+@route('/<type:re:[a-zA-Z]+>/<name:re:[a-zA-Z-]+>')
 def get_file(type, name):
   lookup = find_file(type, name)
 
@@ -107,4 +102,7 @@ def get_file(type, name):
   else:
     abort(404, 'File not found')
 
-waitress.serve(bottle.default_app(), unix_socket='/tmp/quickstart.sock')
+if __name__ == '__main__':
+  waitress.serve(bottle.default_app())
+else:
+  waitress.serve(bottle.default_app(), unix_socket='/tmp/quickstart.sock')
