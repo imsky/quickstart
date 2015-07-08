@@ -102,7 +102,4 @@ def get_file(type, name):
   else:
     abort(404, 'File not found')
 
-if __name__ == '__main__':
-  waitress.serve(bottle.default_app())
-else:
-  waitress.serve(bottle.default_app(), unix_socket='/tmp/quickstart.sock')
+waitress.serve(bottle.default_app(), unix_socket='/tmp/quickstart.sock')
