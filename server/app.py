@@ -86,6 +86,7 @@ def get_file(type, name):
 
   if lookup:
     options, dir, filename = lookup
+
     download = False
     # todo: make dl flag logic more concise
     if request.query_string == 'download' or request.query_string == 'dl':
@@ -98,9 +99,11 @@ def get_file(type, name):
       elif 'no-name' in options:
         # name.ext -> .ext
         download = '.' + split[1]
-
     return static_file(filename, dir, mimetype='text/plain', download=download)
   else:
     abort(404, 'File not found')
 
-waitress.serve(bottle.default_app(), unix_socket='/tmp/quickstart.sock')
+if os.environ['ENV'] == 'dev':
+  waitress.serve(bottle.default_app())
+else:
+  waitress.serve(bottle.default_app(), unix_socket='/tmp/quickstart.sock')
