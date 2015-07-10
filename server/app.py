@@ -103,7 +103,7 @@ def get_file(type, name):
   else:
     abort(404, 'File not found')
 
-if os.environ['ENV'] == 'dev':
+if 'ENV' in os.environ and os.environ['ENV'] == 'dev':
   waitress.serve(bottle.default_app())
 else:
   waitress.serve(bottle.default_app(), unix_socket='/tmp/quickstart.sock')
