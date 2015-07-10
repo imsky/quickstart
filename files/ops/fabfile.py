@@ -1,3 +1,6 @@
+# Fabfile from Quickstart
+# qkst.io/ops/fabfile
+
 from fabric.api import (
   task, parallel, roles
   run, local, sudo, put,
