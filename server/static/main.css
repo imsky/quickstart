@@ -65,7 +65,12 @@ ul {
 
 @media only screen and (max-width: 768px) {
   body {
-    margin: 50px 0px 0px 50px;
+    margin: 40px 0px 0px 40px;
+    font-size: 20px;
+  }
+
+  .home {
+    padding-right: 40px;
   }
 
   h1 .type:before {
@@ -76,6 +81,11 @@ ul {
     display: block;
   }
 
+  code.block {
+    display: block;
+    margin: 5px 0px;
+  }
+
   .footer li {
     float: none;
   }
@@ -83,5 +93,9 @@ ul {
   .footer li:not(:first-of-type):before {
     margin: 0;
     content: '';
+  }
+
+  .desktop-only {
+    display: none;
   }
 }
