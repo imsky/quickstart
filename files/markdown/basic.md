@@ -25,10 +25,9 @@ Here's some Scheme code included using GFM syntax:
 
 ```scheme
 (define (flatten x)
-    (cond ((null? x) '())
-          ((not (pair? x)) (list x))
-          (else (append (flatten (car x))
-                        (flatten (cdr x))))))
+  (cond ((null? x) '())
+    ((not (pair? x)) (list x))
+    (else (append (flatten (car x)) (flatten (cdr x))))))
 ```
 
 Here's a table using GFM syntax:
@@ -41,13 +40,13 @@ Feb   | 345
 And here's a table using plain HTML:
 
 <table>
-    <thead>
-        <tr><th>Month</th><th>Commits</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>Jan</td><td>567</td></tr>
-        <tr><td>Feb</td><td>345</td></tr>
-    </tbody>
+  <thead>
+    <tr><th>Month</th><th>Commits</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Jan</td><td>567</td></tr>
+    <tr><td>Feb</td><td>345</td></tr>
+  </tbody>
 </table>
 
 You can use a small, but useful, subset of HTML in Markdown:
@@ -55,9 +54,9 @@ You can use a small, but useful, subset of HTML in Markdown:
 <h3>Markdown Links</h3>
 
 <ul>
-    <li><a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a></li>
-    <li><a href="https://help.github.com/articles/github-flavored-markdown/">GitHub Flavored Markdown</a></li>
-    <li><a href="http://commonmark.org/">CommonMark</a></li>
-    <li><a href="http://johnmacfarlane.net/babelmark2">Babelmark 2</a></li>
-    <li><a href="http://dillinger.io/">Dillinger</a></li>
+  <li><a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a></li>
+  <li><a href="https://help.github.com/articles/github-flavored-markdown/">GitHub Flavored Markdown</a></li>
+  <li><a href="http://commonmark.org/">CommonMark</a></li>
+  <li><a href="http://johnmacfarlane.net/babelmark2">Babelmark 2</a></li>
+  <li><a href="http://dillinger.io/">Dillinger</a></li>
 </ul>
