@@ -12,6 +12,10 @@ Quickstart is a collection of useful files.
 * Browse with `curl`: `curl qkst.io/readme/readme`
 * Download with `curl`: `curl -OJ qkst.io/readme/readme?dl`
 
+## Contributing
+
+Please see `CONTRIBUTING.md`.
+
 ## Credits
 
 Quickstart is a project by [Ivan Malopinsky](http://imsky.co).
