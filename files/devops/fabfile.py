@@ -1,5 +1,5 @@
 # Fabfile from Quickstart
-# qkst.io/ops/fabfile
+# qkst.io/devops/fabfile
 
 from fabric.api import (
   task, parallel, roles

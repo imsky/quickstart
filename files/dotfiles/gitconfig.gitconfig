@@ -2,21 +2,25 @@
 # qkst.io/dotfiles/gitconfig
 
 [alias]
-    who = shortlog -sn
-    lg = log --abbrev-commit --pretty=oneline --decorate --all --topo-order
-    po = push origin
+	who = shortlog -sn
+	lg = log --abbrev-commit --pretty=oneline --decorate --all --topo-order
+	po = push origin
 
 [color]
-    ui = true
+	ui = true
 
 [core]
-    trustctime = false
-    precomposeunicode = false
-    autocrlf = true
-  # editor = nano
-
-[push]
-    default = upstream
+	trustctime = false
+	precomposeunicode = false
+	autocrlf = input
+	# editor = nano
 
 [help]
-    autocorrect = 1
+	autocorrect = 1
+
+[log]
+	decorate = true
+	abbrevCommit = true
+
+[push]
+	default = upstream
