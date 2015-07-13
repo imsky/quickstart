@@ -3,7 +3,7 @@
 
 [alias]
 	who = shortlog -sn
-	lg = log --abbrev-commit --pretty=oneline --decorate --all --topo-order
+	lg = log --pretty=oneline --all --topo-order
 	po = push origin
 
 [color]

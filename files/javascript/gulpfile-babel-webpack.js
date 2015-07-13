@@ -3,10 +3,10 @@ Gulpfile (Babel + Webpack) from Quickstart
 qkst.io/js/gulpfile-babel-webpack
 */
 
-// npm install --save-dev gulp gulp-webpack babel-loader
+// npm install --save-dev gulp webpack-stream babel-loader
 
 var gulp = require('gulp');
-var webpack = require('gulp-webpack');
+var webpack = require('webpack-stream');
 
 gulp.task('transpile', function() {
   return gulp.src('index.js')

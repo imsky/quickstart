@@ -6,7 +6,7 @@ Contributions are welcome! Please use GitHub issues and pull requests to file bu
 
 * Cover as many common use cases in files as can fit within 1-2 KB.
 * Files should be tested to ensure they work properly and are self-contained.
-* Files should have a comment banner at the top specifying the type of file and its `qkst.io` URL which should match its location.
+* Ensure files have a comment banner at the top with the type of file and a `qkst.io` URL that matches its location.
 
 ## Code standards
 

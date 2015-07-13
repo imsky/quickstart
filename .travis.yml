@@ -14,3 +14,7 @@ after_success:
 - echo -e "Host qkst.io\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - scp -i server/quickstart.pem /tmp/$BUILD_FILE deployer@qkst.io:/tmp
 - ssh -i server/quickstart.pem deployer@qkst.io "~/deploy-qkst.sh /tmp/$BUILD_FILE >> ~/deploy-qkst.log"
+- sleep 5
+- test $(curl -s -o /dev/null -w "%{http_code}" qkst.io/) -eq 200 || exit 1
+- test $(curl -s -o /dev/null -w "%{http_code}" qkst.io/readme) -eq 200 || exit 1
+- test $(curl -s -o /dev/null -w "%{http_code}" qkst.io/readme/readme) -eq 200 || exit 1
