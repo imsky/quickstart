@@ -6,7 +6,13 @@
 </h1>
 <ul class="files">
 {% for file in files %}
-  <li><a href="/{{ type }}/{{ file }}">{{ file }}</a></li>
+  <li>
+    <a href="/{{ type }}/{{ file }}">{{ file }}</a>
+    <a href="/{{ type }}/{{ file }}?download" class="download-link">
+      <i class="icon-download"></i>
+      <span class="sr-only">Download</span>
+    </a>
+  </li>
 {% endfor %}
 </ul>
 {% endblock -%}

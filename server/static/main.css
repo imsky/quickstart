@@ -1,9 +1,49 @@
 @import url(//fonts.googleapis.com/css?family=Roboto+Mono:400,700);
 
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?-eb4b3y');
+	src:url('fonts/icomoon.eot?#iefix-eb4b3y') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?-eb4b3y') format('truetype'),
+		url('fonts/icomoon.woff?-eb4b3y') format('woff'),
+		url('fonts/icomoon.svg?-eb4b3y#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 body {
   margin: 100px 0px 0px 100px;
   font-family: Roboto Mono;
   font-size: 24px;
+}
+
+a {
+  color: #012aff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+  text-decoration: none;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Icon by Eight Shades */
+.icon-download:before {
+	content: "\e601";
 }
 
 h1 {
@@ -20,15 +60,6 @@ code {
   font-family: Roboto Mono;
   padding: 0px 5px;
   background: #eee;
-}
-
-a {
-  color: #012aff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 .home {
@@ -48,6 +79,18 @@ ul {
   margin: 2em 0em;
 }
 
+.download-link {
+  font-size: 0.8em;
+  color: #aaa;
+  padding: 5px 10px;
+  margin-left: -5px;
+}
+
+.download-link:hover {
+  color: #012aff;
+  text-decoration: none;
+}
+
 .footer {
   margin-top: 4em;
   overflow: hidden;
@@ -61,6 +104,17 @@ ul {
 .footer li:not(:first-of-type):before {
   content: '•';
   margin: 0em 1em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0
 }
 
 @media only screen and (max-width: 768px) {
