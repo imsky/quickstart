@@ -1,6 +1,6 @@
 # Quickstart
 
-Quickstart is a collection of useful files.
+Quickstart provides useful files for your next project.
 
 ![License][license-image]
 [![Build status][travis-image]][travis-url]
@@ -14,7 +14,7 @@ Quickstart is a collection of useful files.
 
 ## Contributing
 
-Please see `CONTRIBUTING.md`.
+See `CONTRIBUTING.md`.
 
 ## Credits
 

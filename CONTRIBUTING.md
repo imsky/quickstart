@@ -1,6 +1,6 @@
 # Contributing
 
-Contributions are welcome! Please use GitHub issues and pull requests to file bugs and contribute changes.
+Comments, suggestions, and improvements are welcome. Use GitHub issues and pull requests to file bugs and contribute changes.
 
 ## Pull requests
 
