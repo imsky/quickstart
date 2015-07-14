@@ -9,8 +9,7 @@
   <li>
     <a href="/{{ type }}/{{ file }}">{{ file }}</a>
     <a href="/{{ type }}/{{ file }}?download" class="download-link desktop-only">
-      <i class="icon-download"></i>
-      <span class="sr-only">Download</span>
+      <span class="icon-download"><span class="sr-only">download {{ file }}</span></span>
     </a>
   </li>
 {% endfor %}
