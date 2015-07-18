@@ -8,7 +8,7 @@
 {% for file in files %}
   <li>
     <a href="/{{ type }}/{{ file }}">{{ file }}</a>
-    <a href="/{{ type }}/{{ file }}?download" class="download-link desktop-only">
+    <a href="/{{ type }}/{{ file }}?download" rel="nofollow" class="download-link desktop-only">
       <span class="icon-download"><span class="sr-only">download {{ file }}</span></span>
     </a>
   </li>
