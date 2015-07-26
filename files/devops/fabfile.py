@@ -2,13 +2,14 @@
 # qkst.io/devops/fabfile
 
 from fabric.api import (
-  task, parallel, roles
+  task, parallel, roles,
   run, local, sudo, put,
   env, settings
 )
 
 from fabric.contrib.project import rsync_project
 from fabric.context_managers import cd, prefix
+from fabric.tasks import execute
 
 env.user = 'root'
 
