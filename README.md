@@ -8,9 +8,7 @@ Quickstart provides useful files for your next project.
 ## Usage
 
 * Browse online: [qkst.io](https://qkst.io)
-* Download online: [qkst.io/readme/readme?dl](https://qkst.io/readme/readme?dl)
-* Browse with `curl`: `curl qkst.io/readme/readme`
-* Download with `curl`: `curl -OJ qkst.io/readme/readme?dl`
+* Download with `curl`: `curl qkst.io/dotfiles/gitconfig > .gitconfig`
 
 ## Contributing
 
