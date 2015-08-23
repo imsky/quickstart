@@ -11,28 +11,42 @@ from fabric.contrib.project import rsync_project
 from fabric.context_managers import cd, prefix
 from fabric.tasks import execute
 
-env.user = 'root'
-
-env.roledefs = {
-    'local': ['localhost:22']
-}
-
-env.roledefs['all'] = [host for role in env.roledefs.values() for host in role]
+env.hosts = ['root@localhost:22']
 
 
 @task
-@roles('local')
-def setup():
+def bootstrap():
     sudo('apt-get update')
-    sudo('apt-get install -y python python-pip python-virtualenv')
-    run('pip install fabric')
+    sudo('apt-get install -y sysstat wget unzip htop dtach')
 
 
 @task
-@parallel
+def start():
+    execute('service', 'cron')
+
+
+@task
+def service(name, action='start'):
+    sudo('service {0} {1} || true'.format(name, action))
+
+
+@task
+def background(process, name='bgprocess'):
+    run('dtach -n `mktemp -u /tmp/{0}.XXXXX` {1}'.format(process, name))
+
+
+@task
 def install_deb(url):
-    sudo('wget %s -O /tmp/download.deb' % url)
+    sudo('wget {0} -O /tmp/download.deb'.format(url))
     sudo('dpkg -i /tmp/download.deb && rm /tmp/download.deb')
+
+
+@task
+def status():
+    run('service --status-all')
+    run('vmstat')
+    run('df -h')
+    run('iostat')
 
 
 @task
@@ -40,7 +54,7 @@ def upload(local='./', remote='/tmp'):
     rsync_project(
         local_dir=local,
         remote_dir=remote,
-        exclude=['.git'],
+        exclude=['.git', '*.pyc', '.DS_Store'],
         extra_opts='-lp'  # preserve symlinks and permissions
     )
 
@@ -49,11 +63,3 @@ def upload(local='./', remote='/tmp'):
 def put_as_user(file, remote, user):
     with settings(user=user):
         put(file, remote)
-
-
-@task
-def context_demo():
-    with cd('/tmp'):
-        run('touch testfile')
-    with prefix('cd /tmp')
-        run('rm testfile')
