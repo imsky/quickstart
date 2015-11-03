@@ -1,4 +1,6 @@
 {
+    "description": "Packer AWS/Docker template from Quickstart - qkst.io/devops/packer",
+
     "variables":  {
         "image_name": "basic-app",
         "aws_access_key": "{{env `AWS_ACCESS_KEY`}}",
