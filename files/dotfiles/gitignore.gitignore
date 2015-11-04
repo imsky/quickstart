@@ -8,6 +8,8 @@ npm-debug.log
 
 # Python
 *.py[cod]
+venv
+__pycache__
 
 # Java
 *.class
@@ -54,3 +56,8 @@ logs
 *.bak
 *.lnk
 Thumbs.db
+
+# Other VCS
+.hg
+.bzr
+.svn
