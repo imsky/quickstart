@@ -1,6 +1,9 @@
 # Git config from Quickstart
 # qkst.io/dotfiles/gitconfig
 
+[user]
+        # signingkey = YOURKEY
+
 [alias]
 	who = shortlog -sn
 	lg = log --pretty=oneline --all --topo-order
