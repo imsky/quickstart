@@ -8,6 +8,7 @@
 	who = shortlog -sn
 	lg = log --pretty=oneline --all --topo-order
 	po = push origin
+	fix = commit --fixup HEAD
 
 [color]
 	ui = true
@@ -27,3 +28,6 @@
 
 [push]
 	default = upstream
+
+[rebase]
+	autosquash = true
