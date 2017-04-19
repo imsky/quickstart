@@ -1,0 +1,16 @@
+set autoindent
+set mouse
+set smooth
+set tabstospaces
+set tabsize 2
+set whitespace "  "
+set const
+set nohelp
+set smarthome
+unset backup
+unset nowrap
+
+# 2.1+ options
+set softwrap
+# 2.7+ options
+set linenumbers
