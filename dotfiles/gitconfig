@@ -2,13 +2,14 @@
 # qkst.io/dotfiles/gitconfig
 
 [user]
-        # signingkey = YOURKEY
+	# signingkey = YOURKEY
 
 [alias]
 	who = shortlog -sn
 	lg = log --pretty=oneline --all --topo-order
 	po = push origin
 	fix = commit --fixup HEAD
+	aa = commit --all --amend --no-edit
 
 [color]
 	ui = true
@@ -17,7 +18,7 @@
 	trustctime = false
 	precomposeunicode = false
 	autocrlf = input
-	# editor = nano
+	editor = nano
 
 [help]
 	autocorrect = 1
@@ -31,3 +32,6 @@
 
 [rebase]
 	autosquash = true
+
+[apply]
+	whitespace = fix
