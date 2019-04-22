@@ -1,0 +1,17 @@
+# Gitignore from Quickstart
+# qkst.io/dotfiles/dockerignore
+
+Dockerfile
+.git
+tmp
+
+node_modules
+npm-debug.log*
+
+__pycache__
+*.pyc
+.env
+.venv
+venv
+
+Godeps

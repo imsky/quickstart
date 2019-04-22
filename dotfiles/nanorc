@@ -1,5 +1,4 @@
 set autoindent
-set mouse
 set smooth
 set tabstospaces
 set tabsize 2
