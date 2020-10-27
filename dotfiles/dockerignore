@@ -4,14 +4,19 @@
 Dockerfile
 .git
 tmp
+.DS_Store
+._*
 
+.nyc_output
+bower_components
 node_modules
 npm-debug.log*
 
 __pycache__
-*.pyc
 .env
 .venv
+*.ipynb
+*.pyc
 venv
 
 Godeps
