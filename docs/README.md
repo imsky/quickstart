@@ -13,19 +13,13 @@ A short description of the project pointing out its main motivation and advantag
 [![Build status][travis-image]][travis-url]
 [![NPM downloads][npm-image]][npm-url]
 <br>
-[![Join our IRC room][irc-image]][irc-url]
 [![Join our Slack room][slack-image]][slack-url]
 [![Join our Gitter room][gitter-image]][gitter-url]
+[![Join our IRC room][irc-image]][irc-url]
 <br>
 [![Share on Twitter][twitter-image]][twitter-link]
 [![Share on Hacker News][hn-image]][hn-link]
 [![Share on Reddit][reddit-image]][reddit-link]
-
-## Installation
-
-* [Download latest release][latest-release]
-* Clone the repository: `git clone https://github.com/example/project.git`
-* Install with NPM: `npm install example`
 
 ## Usage
 
@@ -36,6 +30,12 @@ example.method(requiredArgument, function (err, res) {
   console.log(res);
 });
 ```
+
+## Installation
+
+* [Download latest release][latest-release]
+* Clone the repository: `git clone https://github.com/example/project.git`
+* Install with NPM: `npm install example`
 
 ## Documentation
 
