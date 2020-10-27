@@ -2,41 +2,51 @@
 # qkst.io/dotfiles/gitignore
 
 # Sensitive files
+.env
 *.key
+*.p12
 *.pem
 
 # JavaScript
-node_modules/
+.next
+.nyc_output
 bower_components/
+node_modules/
 npm-debug.log
 
 # Python
+__pycache__
+.eggs
+.env
+.pytest_cache
+.python-version
+.tox
+*.egg-info
+*.ipynb
 *.py[cod]
 venv
-__pycache__
-*.egg-info
 
 # Ruby
-*.gem
 .bundle
-Gemfile.lock
+*.gem
 *.rbc
+Gemfile.lock
 
 # Java
-*.class
 *.[jwe]ar
+*.class
 
 # C, C++
-*.o
-*.so
-*.la
 *.a
 *.dll
+*.la
+*.o
+*.so
 
 # Executables
-*.out
-*.exe
 *.app
+*.exe
+*.out
 
 # Logs
 *.log
@@ -45,28 +55,32 @@ logs
 # Archives
 *.[7gx]z
 *.[tr]ar
-*.zip
-*.dmg
 *.deb
+*.dmg
+*.msi
 *.rpm
 *.xpi
-*.msi
+*.zip
 
 # Linux
-*~
 .Trash-*
+*~
 
 # OS X
 ._*
+.DS_Store
 .fuse_*
 .Spotlight-*
-.DS_Store
 
 # Windows
-*.tmp
 *.bak
 *.lnk
+*.tmp
 Thumbs.db
+
+# Terraform
+.terraform
+*.tfstate.*
 
 # Ansible
 *.retry
@@ -74,12 +88,13 @@ Thumbs.db
 # Vagrant
 .vagrant
 
-# IDEA
+# IDEs
 .idea/*
+*.idea
 
 # Other VCS
-.hg
 .bzr
+.hg
 .svn
 
 # Other temporary files
