@@ -1,6 +1,10 @@
 # Gitignore from Quickstart
 # qkst.io/dotfiles/gitignore
 
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
+
 # Sensitive files
 .env
 *.key
@@ -8,11 +12,22 @@
 *.pem
 
 # JavaScript
+.eslintcache
 .next
+.node_repl_history
+.npm
+.nuxt
 .nyc_output
+.parcel-cache
+*.tsbuildinfo
 bower_components/
+jspm_packages/
+lerna-debug.log*
 node_modules/
-npm-debug.log
+npm-debug.log*
+web_modules/
+yarn-debug.log*
+yarn-error.log*
 
 # Python
 __pycache__
@@ -61,6 +76,7 @@ logs
 *.rpm
 *.xpi
 *.zip
+*.tgz
 
 # Linux
 .Trash-*
